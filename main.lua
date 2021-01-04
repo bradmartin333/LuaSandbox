@@ -47,6 +47,7 @@ function love.draw()
 	if love.mouse.isDown(1) then
 		pressed = true
 		if pressTime < 200 then pressTime = pressTime + 3 end
+        --pressTime = pressTime + 3
 	else
 		if pressed then
 			borderTween = tween.new(0.25, border, {radius = 50}, 'outBack')

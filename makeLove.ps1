@@ -1,11 +1,13 @@
-Compress-Archive -LiteralPath C:\Users\dingo\Desktop\game\main.lua, C:\Users\dingo\Desktop\game\tween.lua -DestinationPath C:\Users\dingo\Desktop\game\gameTest.zip -Update
+$ZipName = "$($PSScriptRoot)\gameTest.zip"
 
-$FileName = "C:\Users\dingo\Desktop\game\gameTest.love"
+Compress-Archive -LiteralPath $PSScriptRoot\main.lua, $PSScriptRoot\tween.lua -DestinationPath $ZipName -Update
+
+$FileName = "$($PSScriptRoot)\gameTest.love"
 if (Test-Path $FileName) 
 {
   Remove-Item $FileName
 }
 
-Rename-Item -Path C:\Users\dingo\Desktop\game\gameTest.zip -NewName C:\Users\dingo\Desktop\game\gameTest.love
+Rename-Item -Path $ZipName -NewName $FileName
 
 .\gameTest.love
