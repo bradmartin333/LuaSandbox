@@ -48,6 +48,10 @@ function newAnimation(image, width, height, duration)
     return animation
 end
 
+function love.touchpressed(id, x, y, dx, dy, pressure)
+    pos = pos + 1
+end
+
 function love.keypressed(key)
    pos = pos + 1
 end

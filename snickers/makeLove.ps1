@@ -13,4 +13,4 @@ if (Test-Path $FileName)
 
 Rename-Item -Path $ZipName -NewName $FileName
 
-.\gameTest.love
+.\snickers.love
